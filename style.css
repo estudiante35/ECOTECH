@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    color: #ffffff; /* <- Esto vuelve todo el texto blanco */
+    h1, h2, h3, p { color: #ffffff;}
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+    ), url("imagenes/2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* Esto hace que la imagen no se mueva al hacer scroll */
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+   min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 150px;  /* Le da suficiente espacio para que el menú no tape ECOTECH */
+    padding-left: 20px;  /* Espaciado para despegar del borde izquierdo */
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Mueve el logo a la izquierda y el menú a la derecha */
+    padding: 20px 40px;            /* Espaciado para despegar de los bordes */
+}
+
+.navbar {
+    position: relative;             /* Permite que el menú verde se alinee con las rayitas */
+}
+
+.logo{
+    color: #FFFDFC;
+    font-size: 25px;
+    font-weight: 800;
+}
+.logo img {
+    width: 170px;
+    height: auto;
+}
+.menu .navbar ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;                       /* Alinea el menú verde a la derecha con el icono */
+    background-color: #10c04a;      /* O el color verde/oscuro que prefieras */
+    width: 200px;
+    padding: 10px 0;
+    border-radius: 8px;
+}
+
+/* 2. Acomodar las opciones una debajo de otra */
+.menu .navbar ul li {
+    display: block;                        /* Cambia float:left por block */
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 12px 20px;
+    color: #FFFDFC;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #000000;
+}
+
+/* 3. La magia: cuando tocas las 3 rayitas, la lista se MUESTRA */
+#menu:checked ~ ul {
+    display: block;
+}
+
+/* 4. Ocultar la casilla blanca */
+#menu {
+    display: none;
+}
+
+/* 5. Ajustar las 3 rayitas */
+.menu-icono {
+    width: 35px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: block;                        /* Asegura que las 3 rayitas se vean */
+}
+
+.header-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
